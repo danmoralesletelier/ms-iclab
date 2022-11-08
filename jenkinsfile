@@ -30,10 +30,19 @@ pipeline {
                 }
             }
         }
-        stage("Paso 3: Build & Run .Jar"){
+        stage("Paso 3: Jar Code"){
             steps {
                 script {
-                sh "echo 'Build & Run .Jar!'"
+                sh "echo 'Jar Code!'"
+                // Run Maven on a Unix agent.
+                sh "./mvnw clean package -e"
+                }
+            }
+        }
+        stage("Paso 4: Run .Jar"){
+            steps {
+                script {
+                sh "echo 'Run .Jar!'"
                 // Run Maven on a Unix agent.
                 //sh "./mvnw clean package -e"
                 //sh "./mvnw spring-boot:run"
