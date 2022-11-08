@@ -40,7 +40,8 @@ pipeline {
                 //sh "./mvnw spring-boot run &"
                 }
             }
-        }stage("Paso 4: Curl"){
+        }
+        stage("Paso 4: Curl"){
             steps {
                 script {
                 sh "echo 'Tirando el curl'"
