@@ -46,12 +46,14 @@ pipeline {
                 // Run Maven on a Unix agent.
                 //sh "./mvnw clean package -e"
                 sh "./mvnw spring-boot:run &"
-                //sh "nohup bash ./mvnw spring-boot run &"
+                }
+            }
+        }
+        stage("Paso 5: Prueba servicio") {
+            steps {
                 sh "echo 'Tirando el curl'"
                 sh "sleep 300"
                 sh "curl -X GET 'http://localhost:8081/rest/mscovid/test?msg=testing'"
-                sh "echo 'Ya lo tire ...'"
-                }
             }
         }
 
