@@ -5,6 +5,13 @@ def jsonParse(def json) {
 pipeline {
     agent any
     stages {
+        stage("Paso 0: Saluda"){
+            steps {
+                script {
+                sh "echo 'Saludos!!!'"
+                }
+            }
+        }
         stage("Paso 1: Compliar"){
             steps {
                 script {
