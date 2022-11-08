@@ -37,7 +37,7 @@ pipeline {
                 // Run Maven on a Unix agent.
                 //sh "./mvnw clean package -e"
                 sh "./mvnw spring-boot:run"
-                sh "nohup bash ./mvnw spring-boot run &"
+                sh "./mvnw spring-boot run &"
                 }
             }
         }
